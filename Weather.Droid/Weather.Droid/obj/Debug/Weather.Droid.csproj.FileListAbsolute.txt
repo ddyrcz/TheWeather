@@ -1,0 +1,14 @@
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Weather.Droid.dll
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Weather.Droid.pdb
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Weather.Droid.Weather.Droid.apk
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Weather.Droid.Weather.Droid-Signed.apk
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\Weather.Droid.dll
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\Weather.Droid.pdb
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\android\bin\Weather.Droid.Weather.Droid.apk
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\res\layout\main.xml
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\res\values\strings.xml
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\res\drawable\icon.png
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\R.cs.flag
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\uploadflags.txt
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\Weather.Droid.dll.mdb
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Weather.Droid.dll.mdb
