@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System;
 using System.Linq;
 using System.Net.Http;
+using Weather.Droid.Models;
 
 namespace Weather.Droid
 {
@@ -15,37 +16,7 @@ namespace Weather.Droid
         #region Private Fields
 
         private string _apiKey = "469d646964e305889fe0cbc41689b037";
-        private int _pageCount = 1;
-
-        #endregion Private Fields
-
-
-
-        #region Private Fields
-
-        private string[] items = new string[] {
-            "ActionScript",
-            "AppleScript",
-            "Asp",
-            "BASIC",
-            "C",
-            "C++",
-            "Clojure",
-            "COBOL",
-            "ColdFusion",
-            "Erlang",
-            "Fortran",
-            "Groovy",
-            "Haskell",
-            "Java",
-            "JavaScript",
-            "Lisp",
-            "Perl",
-            "PHP",
-            "Python",
-            "Ruby",
-            "Scala",
-            "Scheme" };
+        private string[] _items;
 
         #endregion Private Fields
 
@@ -61,21 +32,20 @@ namespace Weather.Droid
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = new Uri("https://api.themoviedb.org");
-                    string jsonResult = client.GetStringAsync(string.Format("3/movie/popular?api_key={0}&page={1}", _apiKey, _pageCount)).Result;
+                    string jsonResult = client.GetStringAsync($"3/movie/popular?api_key={_apiKey}&page={1}").Result;
 
-                    items = JsonConvert
+                    _items = JsonConvert
                         .DeserializeObject<Films>(jsonResult)
                         .results
                         .Select(x => x.title_with_release_date)
                         .ToArray();
 
-                    ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, items);
+                    ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, _items);
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("\nException Caught!");
-                Console.WriteLine("Message :{0} ", ex.Message);
+                ShowToast(ex.Message);
             }
         }
 
@@ -87,8 +57,8 @@ namespace Weather.Droid
 
         protected override void OnListItemClick(ListView list, View view, int position, long id)
         {
-            var text = items[position];
-            Toast.MakeText(this, text, ToastLength.Short).Show();
+            var text = _items[position];
+            ShowToast(text);
         }
 
         protected override void OnPause()
@@ -116,5 +86,14 @@ namespace Weather.Droid
         }
 
         #endregion Protected Methods
+
+        #region Private Methods
+
+        private void ShowToast(string message)
+        {
+            Toast.MakeText(this, message, ToastLength.Short).Show();
+        }
+
+        #endregion Private Methods
     }
 }

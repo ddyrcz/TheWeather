@@ -10,10 +10,13 @@ C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\r
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\res\drawable\icon.png
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\R.cs.flag
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\uploadflags.txt
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Newtonsoft.Json.xml
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Weather.Droid.dll.mdb
-C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\Weather.Droid.csprojResolveAssemblyReference.cache
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Java.Interop.dll.mdb
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Microsoft.CSharp.dll.mdb
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Mono.Android.dll.mdb
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Mono.CSharp.dll.mdb
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\mscorlib.dll.mdb
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\System.ComponentModel.Composition.dll.mdb
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\System.Core.dll.mdb
@@ -24,7 +27,9 @@ C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\S
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\System.Xml.dll.mdb
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\System.Xml.Linq.dll.mdb
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\android\assets\Java.Interop.dll.mdb
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\android\assets\Microsoft.CSharp.dll.mdb
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\android\assets\Mono.Android.dll.mdb
+C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\android\assets\Mono.CSharp.dll.mdb
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\android\assets\mscorlib.dll.mdb
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\android\assets\System.ComponentModel.Composition.dll.mdb
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\android\assets\System.Core.dll.mdb
@@ -35,11 +40,5 @@ C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\a
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\android\assets\System.Xml.dll.mdb
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\android\assets\Weather.Droid.dll.mdb
-C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Newtonsoft.Json.dll
-C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Newtonsoft.Json.xml
-C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Microsoft.CSharp.dll.mdb
-C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Mono.CSharp.dll.mdb
-C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\android\assets\Microsoft.CSharp.dll.mdb
-C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\android\assets\Mono.CSharp.dll.mdb
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\obj\Debug\Weather.Droid.dll.mdb
 C:\Users\ddyrcz\Documents\GitHub\Weather\Weather.Droid\Weather.Droid\bin\Debug\Weather.Droid.dll.mdb

@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace Weather.Droid
+namespace Weather.Droid.Models
 {
     class Films
     {
@@ -25,8 +25,8 @@ namespace Weather.Droid
         public double vote_average { get; set; }
         public string poster_path { get; set; }
         public DateTime release_date { get; set; }
-        public string release_year { get { return "(" + release_date.Year + ")"; } }
+        public string release_year { get { return $"( {release_date.Year} )"; } }
         public string profile_path { get; set; }
-        public string title_with_release_date { get { return title + " " + release_year; } }
+        public string title_with_release_date { get { return $"{title} {release_year}"; } }
     }
 }
