@@ -102,7 +102,7 @@ namespace Weather.Droid
 			public const int ApplicationName = 2130968577;
 			
 			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			public const int Search = 2130968576;
 			
 			static String()
 			{

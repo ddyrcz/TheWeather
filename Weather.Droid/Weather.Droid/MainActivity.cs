@@ -1,6 +1,5 @@
 ﻿using Android.App;
 using Android.OS;
-using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
 using System;
@@ -12,23 +11,31 @@ using Weather.Droid.Models;
 namespace Weather.Droid
 {
     [Activity(Label = "Weather.Droid", MainLauncher = true, Icon = "@drawable/icon")]
-    public class MainActivity : ListActivity
+    public class MainActivity : Activity
     {
-        #region Private Fields
-
         private string _apiKey = "wTfjFu9U1bQzllguURBCG9qx53zLVuEQ";
-        private string[] _items;
 
-        #endregion Private Fields
-
-        #region Protected Methods
+        private EditText _city;
+        private ListView _itemList;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             Console.WriteLine("OnCreate");
             base.OnCreate(savedInstanceState);
 
-            string query = "wa";
+            SetContentView(Resource.Layout.Main);
+
+            _itemList = FindViewById<ListView>(Resource.Id.items);
+            _city = FindViewById<EditText>(Resource.Id.city);
+
+
+            Button search = FindViewById<Button>(Resource.Id.search);
+            search.Click += delegate { OnSearch(); };
+        }
+
+        private void OnSearch()
+        {
+            string query = _city?.Text;
 
             try
             {
@@ -37,12 +44,12 @@ namespace Weather.Droid
                     client.BaseAddress = new Uri("http://dataservice.accuweather.com");
                     string jsonResult = client.GetStringAsync($"locations/v1/cities/autocomplete?apikey={_apiKey}&q={query}").Result;
 
-                    _items = JsonConvert
+                    var items = JsonConvert
                         .DeserializeObject<List<City>>(jsonResult)
                         .Select(x => x.LocalizedName)
                         .ToArray();
 
-                    ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, _items);
+                    _itemList.Adapter = new ItemAdapter(this, items);
                 }
             }
             catch (Exception ex)
@@ -51,51 +58,9 @@ namespace Weather.Droid
             }
         }
 
-        protected override void OnDestroy()
-        {
-            Console.WriteLine("OnDestroy");
-            base.OnDestroy();
-        }
-
-        protected override void OnListItemClick(ListView list, View view, int position, long id)
-        {
-            var text = _items[position];
-            ShowToast(text);
-        }
-
-        protected override void OnPause()
-        {
-            Console.WriteLine("OnPause");
-            base.OnPause();
-        }
-
-        protected override void OnResume()
-        {
-            Console.WriteLine("OnResume");
-            base.OnResume();
-        }
-
-        protected override void OnStart()
-        {
-            Console.WriteLine("OnStart");
-            base.OnStart();
-        }
-
-        protected override void OnStop()
-        {
-            Console.WriteLine("OnStop");
-            base.OnStop();
-        }
-
-        #endregion Protected Methods
-
-        #region Private Methods
-
         private void ShowToast(string message)
         {
             Toast.MakeText(this, message, ToastLength.Short).Show();
         }
-
-        #endregion Private Methods
     }
 }
