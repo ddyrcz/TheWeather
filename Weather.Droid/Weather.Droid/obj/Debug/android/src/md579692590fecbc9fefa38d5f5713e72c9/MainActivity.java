@@ -11,8 +11,8 @@ public class MainActivity
 	static {
 		__md_methods = 
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
-			"n_onListItemClick:(Landroid/widget/ListView;Landroid/view/View;IJ)V:GetOnListItemClick_Landroid_widget_ListView_Landroid_view_View_IJHandler\n" +
 			"n_onDestroy:()V:GetOnDestroyHandler\n" +
+			"n_onListItemClick:(Landroid/widget/ListView;Landroid/view/View;IJ)V:GetOnListItemClick_Landroid_widget_ListView_Landroid_view_View_IJHandler\n" +
 			"n_onPause:()V:GetOnPauseHandler\n" +
 			"n_onResume:()V:GetOnResumeHandler\n" +
 			"n_onStart:()V:GetOnStartHandler\n" +
@@ -38,20 +38,20 @@ public class MainActivity
 	private native void n_onCreate (android.os.Bundle p0);
 
 
-	public void onListItemClick (android.widget.ListView p0, android.view.View p1, int p2, long p3)
-	{
-		n_onListItemClick (p0, p1, p2, p3);
-	}
-
-	private native void n_onListItemClick (android.widget.ListView p0, android.view.View p1, int p2, long p3);
-
-
 	public void onDestroy ()
 	{
 		n_onDestroy ();
 	}
 
 	private native void n_onDestroy ();
+
+
+	public void onListItemClick (android.widget.ListView p0, android.view.View p1, int p2, long p3)
+	{
+		n_onListItemClick (p0, p1, p2, p3);
+	}
+
+	private native void n_onListItemClick (android.widget.ListView p0, android.view.View p1, int p2, long p3);
 
 
 	public void onPause ()
