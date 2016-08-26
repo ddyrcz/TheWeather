@@ -1,0 +1,2 @@
+android.app.Application
+Weather.Droid.Weather.Droid
