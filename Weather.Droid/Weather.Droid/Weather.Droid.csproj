@@ -54,7 +54,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ItemAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\Weather.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />

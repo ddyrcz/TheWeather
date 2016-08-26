@@ -15,7 +15,7 @@ namespace Weather.Droid
     {
         private string _apiKey = "wTfjFu9U1bQzllguURBCG9qx53zLVuEQ";
 
-        private EditText _city;
+        private AutoCompleteTextView _city;
         private ListView _itemList;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -26,16 +26,16 @@ namespace Weather.Droid
             SetContentView(Resource.Layout.Main);
 
             _itemList = FindViewById<ListView>(Resource.Id.items);
-            _city = FindViewById<EditText>(Resource.Id.city);
+            _city = FindViewById<AutoCompleteTextView>(Resource.Id.city);
 
-
-            Button search = FindViewById<Button>(Resource.Id.search);
-            search.Click += delegate { OnSearch(); };
+            _city.TextChanged += delegate { OnSearch(); };
         }
 
         private void OnSearch()
         {
             string query = _city?.Text;
+
+            if (query == null) return;
 
             try
             {
@@ -49,7 +49,9 @@ namespace Weather.Droid
                         .Select(x => x.LocalizedName)
                         .ToArray();
 
-                    _itemList.Adapter = new ItemAdapter(this, items);
+                    ArrayAdapter autoCompleteAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, items);
+
+                    _city.Adapter = autoCompleteAdapter;
                 }
             }
             catch (Exception ex)
