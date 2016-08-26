@@ -4,6 +4,7 @@ using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using Weather.Droid.Models;
@@ -15,7 +16,7 @@ namespace Weather.Droid
     {
         #region Private Fields
 
-        private string _apiKey = "469d646964e305889fe0cbc41689b037";
+        private string _apiKey = "wTfjFu9U1bQzllguURBCG9qx53zLVuEQ";
         private string[] _items;
 
         #endregion Private Fields
@@ -27,17 +28,18 @@ namespace Weather.Droid
             Console.WriteLine("OnCreate");
             base.OnCreate(savedInstanceState);
 
+            string query = "wa";
+
             try
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("https://api.themoviedb.org");
-                    string jsonResult = client.GetStringAsync($"3/movie/popular?api_key={_apiKey}&page={1}").Result;
+                    client.BaseAddress = new Uri("http://dataservice.accuweather.com");
+                    string jsonResult = client.GetStringAsync($"locations/v1/cities/autocomplete?apikey={_apiKey}&q={query}").Result;
 
                     _items = JsonConvert
-                        .DeserializeObject<Films>(jsonResult)
-                        .results
-                        .Select(x => x.title_with_release_date)
+                        .DeserializeObject<List<City>>(jsonResult)
+                        .Select(x => x.LocalizedName)
                         .ToArray();
 
                     ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, _items);
