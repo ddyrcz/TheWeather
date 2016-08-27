@@ -1,4 +1,0 @@
-Weather.Droid.MainActivity, Weather.Droid;md579692590fecbc9fefa38d5f5713e72c9.MainActivity
-Weather.Droid.MainActivity, Weather.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md579692590fecbc9fefa38d5f5713e72c9.MainActivity
-Weather.Droid.MainActivity;md579692590fecbc9fefa38d5f5713e72c9.MainActivity
-weather.droid.MainActivity;md579692590fecbc9fefa38d5f5713e72c9.MainActivity
