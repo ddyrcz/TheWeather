@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage  x:Class="Weather.MainPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#3D4047">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="2*" />
+      <RowDefinition Height="4*" />
+      <RowDefinition Height="2*" />
+      <RowDefinition Height="2*" />
+    </Grid.RowDefinitions>
+
+    <StackLayout>
+      <BoxView Color="#333333" />
+      <BoxView BackgroundColor="White" HeightRequest="1" />
+    </StackLayout>
+    <Label Grid.Row="1"
+           FontSize="32"
+           HorizontalTextAlignment="Center"
+           Text="Wednesday"
+           TextColor="White"
+           VerticalTextAlignment="Center" />
+
+    <Label Grid.Row="3"
+           FontSize="32"
+           HorizontalTextAlignment="Center"
+           Text="20°"
+           TextColor="White"
+           VerticalTextAlignment="Center" />
+
+    <StackLayout Grid.Row="4">
+      <BoxView BackgroundColor="White" HeightRequest="1" />
+
+      <Label HorizontalTextAlignment="Center"
+             Text="Bottom"
+             TextColor="White"
+             VerticalTextAlignment="Center" />
+    </StackLayout>
+  </Grid>
+</ContentPage>
