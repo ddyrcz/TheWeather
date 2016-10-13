@@ -5,11 +5,12 @@
              BackgroundColor="#3D4047">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="3*" />
             <RowDefinition Height="2*" />
             <RowDefinition Height="4*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
 
         <Grid>
@@ -48,36 +49,49 @@
                FontAttributes="Bold"
                FontSize="56"
                HorizontalTextAlignment="Center"
-               Text="Wednesday"
+               Text="Gliwice"
                TextColor="White"
                VerticalTextAlignment="Center" />
 
         <!--  CURRENT WEATHER ICON  -->
-        <Image Grid.Row="2" Source="large_stormy.png" />
+        <Image Grid.Row="2"
+               Aspect="AspectFit"
+               Source="large_partly_cloudy.png" />
 
         <!--  CURRENT TEMPERATURE  -->
         <Label Grid.Row="3"
-               FontSize="48"
+               FontAttributes="Bold"
+               FontSize="68"
                HorizontalTextAlignment="Center"
                Text="20°"
-               TextColor="White"
-               VerticalTextAlignment="Center" />
+               TextColor="White" />
 
+        <!--  CURRENT DAY  -->
+        <Label Grid.Row="4"
+               FontAttributes="Bold"
+               FontSize="28"
+               HorizontalTextAlignment="Center"
+               Text="Wednesday"
+               TextColor="White" />
+      
         <!--  BOTTOM  -->
-        <Grid Grid.Row="4">
+        <Grid Grid.Row="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
             <!--  BOTTOM LINE  -->
-            <BoxView Grid.ColumnSpan="4"
+            <BoxView Grid.ColumnSpan="7"
                      Margin="10,0,10,0"
                      BackgroundColor="#BCBCBC"
                      HeightRequest="2" />
@@ -101,9 +115,15 @@
                        WidthRequest="32" />
             </StackLayout>
 
+            <BoxView Grid.Row="1"
+                     Grid.Column="1"
+                     Margin="0,15,0,15"
+                     BackgroundColor="#BCBCBC"
+                     WidthRequest="2" />
+          
             <!--  WETHER INFORMATION + 2 DAYS  -->
             <StackLayout Grid.Row="1"
-                         Grid.Column="1"
+                         Grid.Column="2"
                          HorizontalOptions="Center"
                          VerticalOptions="Center">
                 <Label HorizontalTextAlignment="Center"
@@ -121,9 +141,15 @@
                        WidthRequest="32" />
             </StackLayout>
 
+            <BoxView Grid.Row="1"
+                     Grid.Column="3"
+                     Margin="0,15,0,15"
+                     BackgroundColor="#BCBCBC"
+                     WidthRequest="2" />
+
             <!--  WETHER INFORMATION + 3 DAYS  -->
             <StackLayout Grid.Row="1"
-                         Grid.Column="2"
+                         Grid.Column="4"
                          HorizontalOptions="Center"
                          VerticalOptions="Center">
                 <Label HorizontalTextAlignment="Center"
@@ -141,9 +167,16 @@
                        WidthRequest="32" />
             </StackLayout>
 
+
+            <BoxView Grid.Row="1"
+                     Grid.Column="5"
+                     Margin="0,15,0,15"
+                     BackgroundColor="#BCBCBC"
+                     WidthRequest="2" />
+
             <!--  WETHER INFORMATION + 4 DAYS  -->
             <StackLayout Grid.Row="1"
-                         Grid.Column="3"
+                         Grid.Column="6"
                          HorizontalOptions="Center"
                          VerticalOptions="Center">
                 <Label HorizontalTextAlignment="Center"
