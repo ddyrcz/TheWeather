@@ -27,9 +27,9 @@
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand"
                      Color="#333333" />
-            <Entry Placeholder="Place" 
-                   
-                   TextColor="White"  Margin="20,0,0,0"  />
+            <Entry Margin="20,0,0,0"
+                   Placeholder="Place"
+                   TextColor="White" />
 
             <Image Grid.Column="1" Source="search_icon.png" />
 
@@ -37,7 +37,7 @@
             <!--  TOP LINE  -->
             <BoxView Grid.Row="1"
                      Grid.ColumnSpan="2"
-                     BackgroundColor="White"
+                     BackgroundColor="#BCBCBC"
                      HeightRequest="2"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand" />
@@ -51,6 +51,9 @@
                Text="Wednesday"
                TextColor="White"
                VerticalTextAlignment="Center" />
+
+        <!--  CURRENT WEATHER ICON  -->
+        <Image Grid.Row="2" Source="large_stormy.png" />
 
         <!--  CURRENT TEMPERATURE  -->
         <Label Grid.Row="3"
@@ -66,17 +69,98 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
 
             <!--  BOTTOM LINE  -->
-            <BoxView Margin="10,0,10,0"
-                     BackgroundColor="White"
+            <BoxView Grid.ColumnSpan="4"
+                     Margin="10,0,10,0"
+                     BackgroundColor="#BCBCBC"
                      HeightRequest="2" />
 
-            <Label Grid.Row="1"
-                   HorizontalTextAlignment="Center"
-                   Text="Bottom"
-                   TextColor="White"
-                   VerticalTextAlignment="Center" />
+            <!--  WETHER INFORMATION + 1 DAYS  -->
+            <StackLayout Grid.Row="1"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center">
+                <Label HorizontalTextAlignment="Center"
+                       Text="Tue"
+                       TextColor="White"
+                       VerticalTextAlignment="Center" />
+
+                <Label HorizontalTextAlignment="Center"
+                       Text="20°"
+                       TextColor="White"
+                       VerticalTextAlignment="Center" />
+
+                <Image HeightRequest="32"
+                       Source="sunny.png"
+                       WidthRequest="32" />
+            </StackLayout>
+
+            <!--  WETHER INFORMATION + 2 DAYS  -->
+            <StackLayout Grid.Row="1"
+                         Grid.Column="1"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center">
+                <Label HorizontalTextAlignment="Center"
+                       Text="Wed"
+                       TextColor="White"
+                       VerticalTextAlignment="Center" />
+
+                <Label HorizontalTextAlignment="Center"
+                       Text="16°"
+                       TextColor="White"
+                       VerticalTextAlignment="Center" />
+
+                <Image HeightRequest="32"
+                       Source="partly_cloudy.png"
+                       WidthRequest="32" />
+            </StackLayout>
+
+            <!--  WETHER INFORMATION + 3 DAYS  -->
+            <StackLayout Grid.Row="1"
+                         Grid.Column="2"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center">
+                <Label HorizontalTextAlignment="Center"
+                       Text="Thu"
+                       TextColor="White"
+                       VerticalTextAlignment="Center" />
+
+                <Label HorizontalTextAlignment="Center"
+                       Text="18°"
+                       TextColor="White"
+                       VerticalTextAlignment="Center" />
+
+                <Image HeightRequest="32"
+                       Source="rainy.png"
+                       WidthRequest="32" />
+            </StackLayout>
+
+            <!--  WETHER INFORMATION + 4 DAYS  -->
+            <StackLayout Grid.Row="1"
+                         Grid.Column="3"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center">
+                <Label HorizontalTextAlignment="Center"
+                       Text="Fri"
+                       TextColor="White"
+                       VerticalTextAlignment="Center" />
+
+                <Label HorizontalTextAlignment="Center"
+                       Text="24°"
+                       TextColor="White"
+                       VerticalTextAlignment="Center" />
+
+                <Image HeightRequest="32"
+                       Source="stormy.png"
+                       WidthRequest="32" />
+
+            </StackLayout>
         </Grid>
     </Grid>
 </ContentPage>
