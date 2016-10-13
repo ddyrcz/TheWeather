@@ -11,7 +11,7 @@ namespace Weather
     {
         public App()
         {
-            MainPage = new HelloForms.Main();
+            MainPage = new Weather.MainPage();
         }
 
         protected override void OnStart()
