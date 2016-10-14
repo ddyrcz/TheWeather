@@ -13,6 +13,13 @@ namespace Weather
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new DataContext();
         }
+    }
+
+
+    public class DataContext
+    {
+        public string Location { get; set; } = "Katowice";
     }
 }

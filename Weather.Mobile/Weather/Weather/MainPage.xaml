@@ -45,12 +45,12 @@
                      VerticalOptions="FillAndExpand" />
         </Grid>
 
-        <!--  CURRENT DAY  -->
+        <!--  LOCATION  -->
         <Label Grid.Row="1"
                FontAttributes="Bold"
                FontSize="56"
                HorizontalTextAlignment="Center"
-               Text="Gliwice"
+               Text="{Binding Location}"
                TextColor="White"
                VerticalTextAlignment="Center" />
 
