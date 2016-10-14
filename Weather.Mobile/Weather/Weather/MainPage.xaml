@@ -7,8 +7,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="2*" />
             <RowDefinition Height="3*" />
-            <RowDefinition Height="8*" />
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="5*" />
             <RowDefinition Height="2*" />
             <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
@@ -29,10 +29,9 @@
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand"
                      Color="#333333" />
-            <Entry Margin="20,0,0,0"
-                   
-                   TextColor="White" />
+            <Entry Margin="20,0,0,0" TextColor="White" />
 
+            <!--  SEARCH_BUTTON  -->
             <Image Grid.Column="1" Source="search_icon.png" />
 
 
@@ -51,21 +50,22 @@
                FontSize="56"
                HorizontalTextAlignment="Center"
                Text="{Binding Location}"
+               TextColor="White" />
+
+        <!--  CURRENT TEMPERATURE  -->
+        <Label Grid.Row="2"
+               Margin="5,0,0,0"
+               FontAttributes="Bold"
+               FontSize="130"
+               HorizontalTextAlignment="Center"
+               Text="{Binding CurrentTemperatureString}"
                TextColor="White"
                VerticalTextAlignment="Center" />
 
         <!--  CURRENT WEATHER ICON  -->
-        <Image Grid.Row="2"
+        <Image Grid.Row="3"
                Aspect="AspectFit"
                Source="large_partly_cloudy.png" />
-
-        <!--  CURRENT TEMPERATURE  -->
-        <Label Grid.Row="3"
-               FontAttributes="Bold"
-               FontSize="68"
-               HorizontalTextAlignment="Center"
-               Text="20°"
-               TextColor="White" />
 
         <!--  CURRENT DAY  -->
         <Label Grid.Row="4"
@@ -107,9 +107,16 @@
                        VerticalTextAlignment="Center" />
 
                 <Label HorizontalTextAlignment="Center"
-                       Text="20°"
                        TextColor="White"
-                       VerticalTextAlignment="Center" />
+                       VerticalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="18°" />
+                            <Span Text=" / " />
+                            <Span Text="12°" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
 
                 <Image HeightRequest="32"
                        Source="sunny.png"
@@ -120,7 +127,7 @@
                      Grid.Column="1"
                      Margin="0,15,0,15"
                      BackgroundColor="#BCBCBC"
-                     WidthRequest="2" />
+                     WidthRequest="1" />
 
             <!--  WETHER INFORMATION + 2 DAYS  -->
             <StackLayout Grid.Row="1"
@@ -132,10 +139,18 @@
                        TextColor="White"
                        VerticalTextAlignment="Center" />
 
+
                 <Label HorizontalTextAlignment="Center"
-                       Text="16°"
                        TextColor="White"
-                       VerticalTextAlignment="Center" />
+                       VerticalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="16°" />
+                            <Span Text=" / " />
+                            <Span Text="9°" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
 
                 <Image HeightRequest="32"
                        Source="partly_cloudy.png"
@@ -146,7 +161,7 @@
                      Grid.Column="3"
                      Margin="0,15,0,15"
                      BackgroundColor="#BCBCBC"
-                     WidthRequest="2" />
+                     WidthRequest="1" />
 
             <!--  WETHER INFORMATION + 3 DAYS  -->
             <StackLayout Grid.Row="1"
@@ -158,22 +173,29 @@
                        TextColor="White"
                        VerticalTextAlignment="Center" />
 
+
                 <Label HorizontalTextAlignment="Center"
-                       Text="18°"
                        TextColor="White"
-                       VerticalTextAlignment="Center" />
+                       VerticalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="20°" />
+                            <Span Text=" / " />
+                            <Span Text="14°" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
 
                 <Image HeightRequest="32"
                        Source="rainy.png"
                        WidthRequest="32" />
             </StackLayout>
 
-
             <BoxView Grid.Row="1"
                      Grid.Column="5"
                      Margin="0,15,0,15"
                      BackgroundColor="#BCBCBC"
-                     WidthRequest="2" />
+                     WidthRequest="1" />
 
             <!--  WETHER INFORMATION + 4 DAYS  -->
             <StackLayout Grid.Row="1"
@@ -185,10 +207,18 @@
                        TextColor="White"
                        VerticalTextAlignment="Center" />
 
+
                 <Label HorizontalTextAlignment="Center"
-                       Text="24°"
                        TextColor="White"
-                       VerticalTextAlignment="Center" />
+                       VerticalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="23°" />
+                            <Span Text=" / " />
+                            <Span Text="15°" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
 
                 <Image HeightRequest="32"
                        Source="stormy.png"

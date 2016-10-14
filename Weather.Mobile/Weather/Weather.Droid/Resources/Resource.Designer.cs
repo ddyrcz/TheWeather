@@ -1870,8 +1870,8 @@ namespace Weather.Droid
 			// aapt resource value: 0x7f020068
 			public const int mr_ic_settings_light = 2130837608;
 			
-			// aapt resource value: 0x7f02006e
-			public const int notification_template_icon_bg = 2130837614;
+			// aapt resource value: 0x7f020070
+			public const int notification_template_icon_bg = 2130837616;
 			
 			// aapt resource value: 0x7f020069
 			public const int partly_cloudy = 2130837609;
@@ -1883,10 +1883,16 @@ namespace Weather.Droid
 			public const int search_icon = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int stormy = 2130837612;
+			public const int splash_screen = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int sunny = 2130837613;
+			public const int SplashScreen = 2130837613;
+			
+			// aapt resource value: 0x7f02006e
+			public const int stormy = 2130837614;
+			
+			// aapt resource value: 0x7f02006f
+			public const int sunny = 2130837615;
 			
 			static Drawable()
 			{
@@ -3338,6 +3344,9 @@ namespace Weather.Droid
 			
 			// aapt resource value: 0x7f070001
 			public const int Theme_MediaRouter_Light = 2131165185;
+			
+			// aapt resource value: 0x7f070147
+			public const int Theme_Splash = 2131165511;
 			
 			// aapt resource value: 0x7f0700ee
 			public const int ThemeOverlay_AppCompat = 2131165422;

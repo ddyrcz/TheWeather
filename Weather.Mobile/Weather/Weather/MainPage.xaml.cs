@@ -20,6 +20,20 @@ namespace Weather
 
     public class DataContext
     {
+        const char DEGREE = '°';
+        
+
         public string Location { get; set; } = "Katowice";
+
+        public int CurrentTemperature { get; set; } = 11;
+
+
+        public string CurrentTemperatureString
+        {
+            get
+            {  
+                return CurrentTemperature.ToString() + DEGREE;
+            }
+        }
     }
 }
