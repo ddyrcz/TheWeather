@@ -14,12 +14,25 @@ namespace Weather
         {
             InitializeComponent();
             BindingContext = new DataContext();
+
+            // I couldn't find a way to set the semi-transparent color in XAML
+            busyBackground.BackgroundColor = new Color(0, 0, 0, 0.5);
         }
     }
 
 
     public class DataContext
     {
+        private bool _isBusy;
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set
+            {
+                _isBusy = value;                
+            }
+        }
+
         const char DEGREE = '°';
         
 

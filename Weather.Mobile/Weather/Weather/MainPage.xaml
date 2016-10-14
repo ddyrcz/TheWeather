@@ -4,227 +4,235 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              BackgroundColor="#3D4047">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="5*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="4*" />
-        </Grid.RowDefinitions>
-
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*" />
-                <ColumnDefinition Width="1*" />
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="3*" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="4*" />
             </Grid.RowDefinitions>
 
-            <!--  SEARCHER BACKGROUND  -->
-            <BoxView Grid.RowSpan="2"
-                     Grid.ColumnSpan="2"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="FillAndExpand"
-                     Color="#333333" />
-            <Entry Margin="20,0,0,0" TextColor="White" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-            <!--  SEARCH_BUTTON  -->
-            <Image Grid.Column="1" Source="search_icon.png" />
+                <!--  SEARCHER BACKGROUND  -->
+                <BoxView Grid.RowSpan="2"
+                         Grid.ColumnSpan="2"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand"
+                         Color="#333333" />
+
+                <!--  INPUT QUERY  -->
+                <SearchBar Grid.ColumnSpan="2"
+                           Placeholder="Place"
+                           PlaceholderColor="Gray"
+                           TextColor="White" />
+
+                <!--  TOP LINE  -->
+                <BoxView Grid.Row="1"
+                         Grid.ColumnSpan="2"
+                         BackgroundColor="#BCBCBC"
+                         HeightRequest="2"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand" />
+            </Grid>
+
+            <!--  LOCATION  -->
+            <Label Grid.Row="1"
+                   FontAttributes="Bold"
+                   FontSize="56"
+                   HorizontalTextAlignment="Center"
+                   Text="{Binding Location}"
+                   TextColor="White" />
+
+            <!--  CURRENT TEMPERATURE  -->
+            <Label Grid.Row="2"
+                   Margin="5,0,0,0"
+                   FontAttributes="Bold"
+                   FontSize="130"
+                   HorizontalTextAlignment="Center"
+                   Text="{Binding CurrentTemperatureString}"
+                   TextColor="White"
+                   VerticalTextAlignment="Center" />
+
+            <!--  CURRENT WEATHER ICON  -->
+            <Image Grid.Row="3"
+                   Aspect="AspectFit"
+                   Source="large_partly_cloudy.png" />
+
+            <!--  CURRENT DAY  -->
+            <Label Grid.Row="4"
+                   FontAttributes="Bold"
+                   FontSize="28"
+                   HorizontalTextAlignment="Center"
+                   Text="Wednesday"
+                   TextColor="White" />
+
+            <!--  BOTTOM  -->
+            <Grid Grid.Row="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <!--  BOTTOM LINE  -->
+                <BoxView Grid.ColumnSpan="7"
+                         Margin="15,0,15,0"
+                         BackgroundColor="#BCBCBC"
+                         HeightRequest="2" />
+
+                <!--  WETHER INFORMATION + 1 DAYS  -->
+                <StackLayout Grid.Row="1"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center">
+                    <Label HorizontalTextAlignment="Center"
+                           Text="Tue"
+                           TextColor="White"
+                           VerticalTextAlignment="Center" />
+
+                    <Label HorizontalTextAlignment="Center"
+                           TextColor="White"
+                           VerticalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="18°" />
+                                <Span Text=" / " />
+                                <Span Text="12°" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Image HeightRequest="32"
+                           Source="sunny.png"
+                           WidthRequest="32" />
+                </StackLayout>
+
+                <BoxView Grid.Row="1"
+                         Grid.Column="1"
+                         Margin="0,15,0,15"
+                         BackgroundColor="#BCBCBC"
+                         WidthRequest="1" />
+
+                <!--  WETHER INFORMATION + 2 DAYS  -->
+                <StackLayout Grid.Row="1"
+                             Grid.Column="2"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center">
+                    <Label HorizontalTextAlignment="Center"
+                           Text="Wed"
+                           TextColor="White"
+                           VerticalTextAlignment="Center" />
 
 
-            <!--  TOP LINE  -->
-            <BoxView Grid.Row="1"
-                     Grid.ColumnSpan="2"
-                     BackgroundColor="#BCBCBC"
-                     HeightRequest="2"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="FillAndExpand" />
+                    <Label HorizontalTextAlignment="Center"
+                           TextColor="White"
+                           VerticalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="16°" />
+                                <Span Text=" / " />
+                                <Span Text="9°" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Image HeightRequest="32"
+                           Source="partly_cloudy.png"
+                           WidthRequest="32" />
+                </StackLayout>
+
+                <BoxView Grid.Row="1"
+                         Grid.Column="3"
+                         Margin="0,15,0,15"
+                         BackgroundColor="#BCBCBC"
+                         WidthRequest="1" />
+
+                <!--  WETHER INFORMATION + 3 DAYS  -->
+                <StackLayout Grid.Row="1"
+                             Grid.Column="4"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center">
+                    <Label HorizontalTextAlignment="Center"
+                           Text="Thu"
+                           TextColor="White"
+                           VerticalTextAlignment="Center" />
+
+
+                    <Label HorizontalTextAlignment="Center"
+                           TextColor="White"
+                           VerticalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="20°" />
+                                <Span Text=" / " />
+                                <Span Text="14°" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Image HeightRequest="32"
+                           Source="rainy.png"
+                           WidthRequest="32" />
+                </StackLayout>
+
+                <BoxView Grid.Row="1"
+                         Grid.Column="5"
+                         Margin="0,15,0,15"
+                         BackgroundColor="#BCBCBC"
+                         WidthRequest="1" />
+
+                <!--  WETHER INFORMATION + 4 DAYS  -->
+                <StackLayout Grid.Row="1"
+                             Grid.Column="6"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center">
+                    <Label HorizontalTextAlignment="Center"
+                           Text="Fri"
+                           TextColor="White"
+                           VerticalTextAlignment="Center" />
+
+
+                    <Label HorizontalTextAlignment="Center"
+                           TextColor="White"
+                           VerticalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="23°" />
+                                <Span Text=" / " />
+                                <Span Text="15°" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Image HeightRequest="32"
+                           Source="stormy.png"
+                           WidthRequest="32" />
+
+                </StackLayout>
+            </Grid>
         </Grid>
-
-        <!--  LOCATION  -->
-        <Label Grid.Row="1"
-               FontAttributes="Bold"
-               FontSize="56"
-               HorizontalTextAlignment="Center"
-               Text="{Binding Location}"
-               TextColor="White" />
-
-        <!--  CURRENT TEMPERATURE  -->
-        <Label Grid.Row="2"
-               Margin="5,0,0,0"
-               FontAttributes="Bold"
-               FontSize="130"
-               HorizontalTextAlignment="Center"
-               Text="{Binding CurrentTemperatureString}"
-               TextColor="White"
-               VerticalTextAlignment="Center" />
-
-        <!--  CURRENT WEATHER ICON  -->
-        <Image Grid.Row="3"
-               Aspect="AspectFit"
-               Source="large_partly_cloudy.png" />
-
-        <!--  CURRENT DAY  -->
-        <Label Grid.Row="4"
-               FontAttributes="Bold"
-               FontSize="28"
-               HorizontalTextAlignment="Center"
-               Text="Wednesday"
-               TextColor="White" />
-
-        <!--  BOTTOM  -->
-        <Grid Grid.Row="5">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="1*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-
-            <!--  BOTTOM LINE  -->
-            <BoxView Grid.ColumnSpan="7"
-                     Margin="15,0,15,0"
-                     BackgroundColor="#BCBCBC"
-                     HeightRequest="2" />
-
-            <!--  WETHER INFORMATION + 1 DAYS  -->
-            <StackLayout Grid.Row="1"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center">
-                <Label HorizontalTextAlignment="Center"
-                       Text="Tue"
-                       TextColor="White"
-                       VerticalTextAlignment="Center" />
-
-                <Label HorizontalTextAlignment="Center"
-                       TextColor="White"
-                       VerticalTextAlignment="Center">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="18°" />
-                            <Span Text=" / " />
-                            <Span Text="12°" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-
-                <Image HeightRequest="32"
-                       Source="sunny.png"
-                       WidthRequest="32" />
-            </StackLayout>
-
-            <BoxView Grid.Row="1"
-                     Grid.Column="1"
-                     Margin="0,15,0,15"
-                     BackgroundColor="#BCBCBC"
-                     WidthRequest="1" />
-
-            <!--  WETHER INFORMATION + 2 DAYS  -->
-            <StackLayout Grid.Row="1"
-                         Grid.Column="2"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center">
-                <Label HorizontalTextAlignment="Center"
-                       Text="Wed"
-                       TextColor="White"
-                       VerticalTextAlignment="Center" />
-
-
-                <Label HorizontalTextAlignment="Center"
-                       TextColor="White"
-                       VerticalTextAlignment="Center">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="16°" />
-                            <Span Text=" / " />
-                            <Span Text="9°" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-
-                <Image HeightRequest="32"
-                       Source="partly_cloudy.png"
-                       WidthRequest="32" />
-            </StackLayout>
-
-            <BoxView Grid.Row="1"
-                     Grid.Column="3"
-                     Margin="0,15,0,15"
-                     BackgroundColor="#BCBCBC"
-                     WidthRequest="1" />
-
-            <!--  WETHER INFORMATION + 3 DAYS  -->
-            <StackLayout Grid.Row="1"
-                         Grid.Column="4"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center">
-                <Label HorizontalTextAlignment="Center"
-                       Text="Thu"
-                       TextColor="White"
-                       VerticalTextAlignment="Center" />
-
-
-                <Label HorizontalTextAlignment="Center"
-                       TextColor="White"
-                       VerticalTextAlignment="Center">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="20°" />
-                            <Span Text=" / " />
-                            <Span Text="14°" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-
-                <Image HeightRequest="32"
-                       Source="rainy.png"
-                       WidthRequest="32" />
-            </StackLayout>
-
-            <BoxView Grid.Row="1"
-                     Grid.Column="5"
-                     Margin="0,15,0,15"
-                     BackgroundColor="#BCBCBC"
-                     WidthRequest="1" />
-
-            <!--  WETHER INFORMATION + 4 DAYS  -->
-            <StackLayout Grid.Row="1"
-                         Grid.Column="6"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center">
-                <Label HorizontalTextAlignment="Center"
-                       Text="Fri"
-                       TextColor="White"
-                       VerticalTextAlignment="Center" />
-
-
-                <Label HorizontalTextAlignment="Center"
-                       TextColor="White"
-                       VerticalTextAlignment="Center">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="23°" />
-                            <Span Text=" / " />
-                            <Span Text="15°" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-
-                <Image HeightRequest="32"
-                       Source="stormy.png"
-                       WidthRequest="32" />
-
-            </StackLayout>
-        </Grid>
+        <!--  BUSY ANIMATION  -->
+        <BoxView x:Name="busyBackground" IsVisible="True" />
+        <ActivityIndicator IsRunning="True"
+                           VerticalOptions="CenterAndExpand"
+                           Color="Black" />
     </Grid>
 </ContentPage>
