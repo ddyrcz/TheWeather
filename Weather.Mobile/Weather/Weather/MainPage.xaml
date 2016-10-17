@@ -65,21 +65,21 @@
                    FontAttributes="Bold"
                    FontSize="130"
                    HorizontalTextAlignment="Center"
-                   Text="{Binding CurrentTemperatureString}"
+                   Text="{Binding CurrentWeather.DaytimeTemperatureString}"
                    TextColor="White"
                    VerticalTextAlignment="Center" />
 
             <!--  CURRENT WEATHER ICON  -->
             <Image Grid.Row="3"
                    Aspect="AspectFit"
-                   Source="{Binding CurrentWeatherIconPath}" />
+                   Source="{Binding CurrentWeather.WeatherIconPath}" />
 
             <!--  CURRENT DAY  -->
             <Label Grid.Row="4"
                    FontAttributes="Bold"
                    FontSize="28"
                    HorizontalTextAlignment="Center"
-                   Text="{Binding DayOfWeek}"
+                   Text="{Binding CurrentWeather.DayOfWeek}"
                    TextColor="White" />
 
             <!--  BOTTOM  -->
@@ -109,17 +109,17 @@
                              HorizontalOptions="Center"
                              VerticalOptions="Center">
                     <Label HorizontalTextAlignment="Center"
-                           Text="{Binding FutureTemperatures[0].ShortDayOfWeek}"
+                           Text="{Binding FutureWeather[0].ShortDayOfWeek}"
                            TextColor="White"
                            VerticalTextAlignment="Center" />
 
                     <Label HorizontalTextAlignment="Center"
-                           Text="{Binding FutureTemperatures[0].Overview}"
+                           Text="{Binding FutureWeather[0].TemperaturesString}"
                            TextColor="White"
                            VerticalTextAlignment="Center" />
 
                     <Image HeightRequest="32"
-                           Source="{Binding FutureTemperatures[0].WeatherIconPath}"
+                           Source="{Binding FutureWeather[0].WeatherIconPath}"
                            WidthRequest="32" />
                 </StackLayout>
 
@@ -135,18 +135,18 @@
                              HorizontalOptions="Center"
                              VerticalOptions="Center">
                     <Label HorizontalTextAlignment="Center"
-                           Text="{Binding FutureTemperatures[1].ShortDayOfWeek}"
+                           Text="{Binding FutureWeather[1].ShortDayOfWeek}"
                            TextColor="White"
                            VerticalTextAlignment="Center" />
 
 
                     <Label HorizontalTextAlignment="Center"
-                           Text="{Binding FutureTemperatures[1].Overview}"
+                           Text="{Binding FutureWeather[1].TemperaturesString}"
                            TextColor="White"
                            VerticalTextAlignment="Center" />
 
                     <Image HeightRequest="32"
-                           Source="{Binding FutureTemperatures[1].WeatherIconPath}"
+                           Source="{Binding FutureWeather[1].WeatherIconPath}"
                            WidthRequest="32" />
                 </StackLayout>
 
@@ -161,19 +161,19 @@
                              Grid.Column="4"
                              HorizontalOptions="Center"
                              VerticalOptions="Center">
-                    <Label HorizontalTextAlignment="Center"                           
-                           Text="{Binding FutureTemperatures[2].ShortDayOfWeek}"
+                    <Label HorizontalTextAlignment="Center"
+                           Text="{Binding FutureWeather[2].ShortDayOfWeek}"
                            TextColor="White"
                            VerticalTextAlignment="Center" />
 
 
                     <Label HorizontalTextAlignment="Center"
-                           Text="{Binding FutureTemperatures[2].Overview}"
+                           Text="{Binding FutureWeather[2].TemperaturesString}"
                            TextColor="White"
                            VerticalTextAlignment="Center" />
 
                     <Image HeightRequest="32"
-                           Source="{Binding FutureTemperatures[2].WeatherIconPath}"
+                           Source="{Binding FutureWeather[2].WeatherIconPath}"
                            WidthRequest="32" />
                 </StackLayout>
 
@@ -189,18 +189,18 @@
                              HorizontalOptions="Center"
                              VerticalOptions="Center">
                     <Label HorizontalTextAlignment="Center"
-                           Text="{Binding FutureTemperatures[3].ShortDayOfWeek}"
+                           Text="{Binding FutureWeather[3].ShortDayOfWeek}"
                            TextColor="White"
                            VerticalTextAlignment="Center" />
 
 
                     <Label HorizontalTextAlignment="Center"
-                           Text="{Binding FutureTemperatures[3].Overview}"
+                           Text="{Binding FutureWeather[3].TemperaturesString}"
                            TextColor="White"
                            VerticalTextAlignment="Center" />
 
                     <Image HeightRequest="32"
-                           Source="{Binding FutureTemperatures[3].WeatherIconPath}"
+                           Source="{Binding FutureWeather[3].WeatherIconPath}"
                            WidthRequest="32" />
 
                 </StackLayout>

@@ -1,57 +1,76 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Weather.Interface;
 
 namespace Weather.ViewModel
 {
-    class DailyTemperature
+    internal class DailyWeather
     {
-        public DailyTemperature(string shortDayOfWeek, double daytimeTemperature, double nightTemperature)
+        private const char DEGREE = '°';
+
+        public DailyWeather(double daytimeTemperature, double nightTemperature)
         {
             DaytimeTemperature = daytimeTemperature;
             NightTemperature = nightTemperature;
-            ShortDayOfWeek = shortDayOfWeek;
         }
 
-        private const char DEGREE = '°';
-
+        public string DayOfWeek { get; set; }
         public double DaytimeTemperature { get; set; }
 
-
-        public string ShortDayOfWeek { get; set; }
-
-        public string WeatherIconPath { get; set; } = "cloudy.png";
-
-        public string Overview
+        public string DaytimeTemperatureString
         {
             get
             {
-                return $"{DaytimeTemperature.ToString()}{DEGREE} / {NightTemperature.ToString()}{DEGREE}";
+                return $"{DaytimeTemperature.ToString()}{DEGREE}";
             }
         }
-    }
 
-    class MainViewModel : BaseViewModel, ISearchable
-    {
-        private DailyTemperature[] _futureTemperatures = {
-            new DailyTemperature("Tue",5,2),
-            new DailyTemperature("Wed",6,1),
-            new DailyTemperature("Thu",8,3),
-            new DailyTemperature("Fri",12,6)
-        };
+        public double NightTemperature { get; set; }
 
-        public string FutureTemperature { get; set; } = "1/1";
-
-        public DailyTemperature[] FutureTemperatures
+        public string NightTemperatureString
         {
-            get { return _futureTemperatures; }
-            set { _futureTemperatures = value; }
+            get
+            {
+                return $"{NightTemperature.ToString()}{DEGREE}";
+            }
         }
 
+        public string ShortDayOfWeek { get; set; }
+
+        public string TemperaturesString
+        {
+            get
+            {
+                return $"{DaytimeTemperatureString} / {NightTemperatureString}";
+            }
+        }
+
+        public string WeatherIconPath { get; set; }
+    }
+
+    internal class MainViewModel : BaseViewModel, ISearchable
+    {
+        private DailyWeather[] _futureWeather = {
+            new DailyWeather(5,2) { WeatherIconPath = "cloudy.png",  ShortDayOfWeek = "Tue" } ,
+            new DailyWeather(6,1) { WeatherIconPath = "cloudy.png",  ShortDayOfWeek = "Wed"  } ,
+            new DailyWeather(8,3) { WeatherIconPath = "cloudy.png",  ShortDayOfWeek = "Thu"  } ,
+            new DailyWeather(12,6) { WeatherIconPath = "cloudy.png",  ShortDayOfWeek = "Fri"  }
+        };
+
         private string _query;
+
+        public DailyWeather CurrentWeather { get; set; } = new DailyWeather(2, 1)
+        {
+            WeatherIconPath = "large_stormy.png",
+            DayOfWeek = "Monday"
+        };
+
+        public DailyWeather[] FutureWeather
+        {
+            get { return _futureWeather; }
+            set { _futureWeather = value; }
+        }
+
+        public string Location { get; set; } = "Katowice";
 
         public string Query
         {
@@ -62,38 +81,6 @@ namespace Weather.ViewModel
                 //Search(Query);
             }
         }
-
-        private string _currentWeatherIconPath = "large_cloudy.png";
-
-        public string CurrentWeatherIconPath
-        {
-            get { return _currentWeatherIconPath; }
-            set { _currentWeatherIconPath = value; }
-        }
-
-        private string _dayOfWeen = "Monday";
-
-        public string DayOfWeek
-        {
-            get { return _dayOfWeen; }
-            set { _dayOfWeen = value; }
-        }
-
-
-
-        private const char DEGREE = '°';
-
-        public int CurrentTemperature { get; set; } = 11;
-
-        public string CurrentTemperatureString
-        {
-            get
-            {
-                return CurrentTemperature.ToString() + DEGREE;
-            }
-        }
-
-        public string Location { get; set; } = "Katowice";
 
         public void Search(string query)
         {
