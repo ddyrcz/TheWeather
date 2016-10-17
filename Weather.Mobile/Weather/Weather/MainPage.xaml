@@ -2,7 +2,11 @@
 <ContentPage x:Class="Weather.MainPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Weather.ViewModel"
              BackgroundColor="#3D4047">
+    <ContentPage.BindingContext>
+        <viewmodel:MainViewModel />
+    </ContentPage.BindingContext>
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -11,7 +15,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="5*" />
                 <RowDefinition Height="2*" />
-                <RowDefinition Height="4*" />
+                <RowDefinition Height="5*" />
             </Grid.RowDefinitions>
 
             <Grid>
@@ -35,6 +39,7 @@
                 <SearchBar Grid.ColumnSpan="2"
                            Placeholder="Place"
                            PlaceholderColor="Gray"
+                           Text="{Binding Query}"
                            TextColor="White" />
 
                 <!--  TOP LINE  -->
@@ -67,14 +72,14 @@
             <!--  CURRENT WEATHER ICON  -->
             <Image Grid.Row="3"
                    Aspect="AspectFit"
-                   Source="large_partly_cloudy.png" />
+                   Source="{Binding CurrentWeatherIconPath}" />
 
             <!--  CURRENT DAY  -->
             <Label Grid.Row="4"
                    FontAttributes="Bold"
                    FontSize="28"
                    HorizontalTextAlignment="Center"
-                   Text="Wednesday"
+                   Text="{Binding DayOfWeek}"
                    TextColor="White" />
 
             <!--  BOTTOM  -->
@@ -104,24 +109,17 @@
                              HorizontalOptions="Center"
                              VerticalOptions="Center">
                     <Label HorizontalTextAlignment="Center"
-                           Text="Tue"
+                           Text="{Binding FutureTemperatures[0].ShortDayOfWeek}"
                            TextColor="White"
                            VerticalTextAlignment="Center" />
 
                     <Label HorizontalTextAlignment="Center"
+                           Text="{Binding FutureTemperatures[0].Overview}"
                            TextColor="White"
-                           VerticalTextAlignment="Center">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="18°" />
-                                <Span Text=" / " />
-                                <Span Text="12°" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
+                           VerticalTextAlignment="Center" />
 
                     <Image HeightRequest="32"
-                           Source="sunny.png"
+                           Source="{Binding FutureTemperatures[0].WeatherIconPath}"
                            WidthRequest="32" />
                 </StackLayout>
 
@@ -137,25 +135,18 @@
                              HorizontalOptions="Center"
                              VerticalOptions="Center">
                     <Label HorizontalTextAlignment="Center"
-                           Text="Wed"
+                           Text="{Binding FutureTemperatures[1].ShortDayOfWeek}"
                            TextColor="White"
                            VerticalTextAlignment="Center" />
 
 
                     <Label HorizontalTextAlignment="Center"
+                           Text="{Binding FutureTemperatures[1].Overview}"
                            TextColor="White"
-                           VerticalTextAlignment="Center">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="16°" />
-                                <Span Text=" / " />
-                                <Span Text="9°" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
+                           VerticalTextAlignment="Center" />
 
                     <Image HeightRequest="32"
-                           Source="partly_cloudy.png"
+                           Source="{Binding FutureTemperatures[1].WeatherIconPath}"
                            WidthRequest="32" />
                 </StackLayout>
 
@@ -170,26 +161,19 @@
                              Grid.Column="4"
                              HorizontalOptions="Center"
                              VerticalOptions="Center">
-                    <Label HorizontalTextAlignment="Center"
-                           Text="Thu"
+                    <Label HorizontalTextAlignment="Center"                           
+                           Text="{Binding FutureTemperatures[2].ShortDayOfWeek}"
                            TextColor="White"
                            VerticalTextAlignment="Center" />
 
 
                     <Label HorizontalTextAlignment="Center"
+                           Text="{Binding FutureTemperatures[2].Overview}"
                            TextColor="White"
-                           VerticalTextAlignment="Center">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="20°" />
-                                <Span Text=" / " />
-                                <Span Text="14°" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
+                           VerticalTextAlignment="Center" />
 
                     <Image HeightRequest="32"
-                           Source="rainy.png"
+                           Source="{Binding FutureTemperatures[2].WeatherIconPath}"
                            WidthRequest="32" />
                 </StackLayout>
 
@@ -205,33 +189,26 @@
                              HorizontalOptions="Center"
                              VerticalOptions="Center">
                     <Label HorizontalTextAlignment="Center"
-                           Text="Fri"
+                           Text="{Binding FutureTemperatures[3].ShortDayOfWeek}"
                            TextColor="White"
                            VerticalTextAlignment="Center" />
 
 
                     <Label HorizontalTextAlignment="Center"
+                           Text="{Binding FutureTemperatures[3].Overview}"
                            TextColor="White"
-                           VerticalTextAlignment="Center">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="23°" />
-                                <Span Text=" / " />
-                                <Span Text="15°" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
+                           VerticalTextAlignment="Center" />
 
                     <Image HeightRequest="32"
-                           Source="stormy.png"
+                           Source="{Binding FutureTemperatures[3].WeatherIconPath}"
                            WidthRequest="32" />
 
                 </StackLayout>
             </Grid>
         </Grid>
         <!--  BUSY ANIMATION  -->
-        <BoxView x:Name="busyBackground" IsVisible="False" />
-        <ActivityIndicator IsRunning="False"
+        <BoxView x:Name="busyBackground" IsVisible="{Binding IsBusy}" />
+        <ActivityIndicator IsRunning="{Binding IsBusy}"
                            VerticalOptions="CenterAndExpand"
                            Color="Black" />
     </Grid>
