@@ -230,8 +230,8 @@
             </Grid>
         </Grid>
         <!--  BUSY ANIMATION  -->
-        <BoxView x:Name="busyBackground" IsVisible="True" />
-        <ActivityIndicator IsRunning="True"
+        <BoxView x:Name="busyBackground" IsVisible="False" />
+        <ActivityIndicator IsRunning="False"
                            VerticalOptions="CenterAndExpand"
                            Color="Black" />
     </Grid>
