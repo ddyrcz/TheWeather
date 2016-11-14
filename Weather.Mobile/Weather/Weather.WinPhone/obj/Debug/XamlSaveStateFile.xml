@@ -1,7 +1,7 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
     <LocalAssembly PathName="c:\users\ddyrcz\documents\github\weather\weather.mobile\weather\weather.winphone\obj\debug\intermediatexaml\weather.winphone.exe" HashGuid="21b874ef-2a14-d677-8cd4-97abd317cbb3" />
-    <ReferenceAssembly PathName="c:\users\ddyrcz\documents\github\weather\weather.mobile\weather\weather\bin\debug\weather.dll" HashGuid="ecac2ce4-777e-0d31-c51c-4e923fc70115" />
+    <ReferenceAssembly PathName="c:\users\ddyrcz\documents\github\weather\weather.mobile\weather\weather\bin\debug\weather.dll" HashGuid="62241380-0198-8540-8203-127072b62750" />
     <ReferenceAssembly PathName="c:\users\ddyrcz\documents\github\weather\weather.mobile\packages\xamarin.forms.2.2.0.45\lib\wpa81\xamarin.forms.core.dll" HashGuid="2a418b72-55c1-19a8-a363-4b8c348fbee0" />
     <ReferenceAssembly PathName="c:\users\ddyrcz\documents\github\weather\weather.mobile\packages\xamarin.forms.2.2.0.45\lib\wpa81\xamarin.forms.platform.dll" HashGuid="bb4040f4-26bb-5883-795e-627e39855666" />
     <ReferenceAssembly PathName="c:\users\ddyrcz\documents\github\weather\weather.mobile\packages\xamarin.forms.2.2.0.45\lib\wpa81\xamarin.forms.platform.winrt.dll" HashGuid="068a3578-03d9-2580-f12e-c531e1d2d71c" />

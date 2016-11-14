@@ -9,7 +9,6 @@ namespace Weather.ViewModel
 {
     class BaseViewModel : INotifyPropertyChanged
     {
-
         private bool _isBusy;
 
         public bool IsBusy

@@ -1,52 +1,11 @@
-﻿using System;
+﻿using DarkSkyApi;
+using DarkSkyApi.Models;
+using System;
 using Weather.Interface;
+using Weather.Model;
 
 namespace Weather.ViewModel
-{
-    internal class DailyWeather
-    {
-        private const char DEGREE = '°';
-
-        public DailyWeather(double daytimeTemperature, double nightTemperature)
-        {
-            DaytimeTemperature = daytimeTemperature;
-            NightTemperature = nightTemperature;
-        }
-
-        public string DayOfWeek { get; set; }
-        public double DaytimeTemperature { get; set; }
-
-        public string DaytimeTemperatureString
-        {
-            get
-            {
-                return $"{DaytimeTemperature.ToString()}{DEGREE}";
-            }
-        }
-
-        public double NightTemperature { get; set; }
-
-        public string NightTemperatureString
-        {
-            get
-            {
-                return $"{NightTemperature.ToString()}{DEGREE}";
-            }
-        }
-
-        public string ShortDayOfWeek { get; set; }
-
-        public string TemperaturesString
-        {
-            get
-            {
-                return $"{DaytimeTemperatureString} / {NightTemperatureString}";
-            }
-        }
-
-        public string WeatherIconPath { get; set; }
-    }
-
+{    
     internal class MainViewModel : BaseViewModel, ISearchable
     {
         private DailyWeather[] _futureWeather = {
@@ -77,14 +36,26 @@ namespace Weather.ViewModel
             get { return _query; }
             set
             {
-                _query = value;
-                //Search(Query);
+                _query = value;                
             }
         }
 
+        public MainViewModel()
+        {
+            var client = new DarkSkyService("918d906b0cf3fc7b2aa3f08dfc4861a5");
+            Forecast result = client.GetWeatherDataAsync(37.8267, -122.423).Result;
+        }
+
+        
+
         public void Search(string query)
         {
-            throw new NotImplementedException();
+            // Invoke when
+            //  * Click search 
+            //  * Click OK on the keyboard
+            //  * Select one of the suggestion
+
+            // Get the data from the service
         }
     }
 }
